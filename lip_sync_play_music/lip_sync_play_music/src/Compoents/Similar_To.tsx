@@ -1,30 +1,31 @@
 import { PROFILES } from "../Registers/PROFILES";
 import SongCard from "./SongCard";
-import "./Styles/SongCard.css"
 
-function Listen_again() {
+
+function Similar_To() {
     return (
       <>
-      <h2>Listen again</h2>
+      <h2>Similar to:</h2>
       <main className='profiles'>
         <ul>
-         {PROFILES.map((profile) => {
+         {PROFILES.map((profile)=>{if (profile.gener==='rock' ){
           return (
             <SongCard
-              key={profile.nameSong}
+              key={profile.gener}
               imageArtist={profile.imageArtist}
               nameSong={profile.nameSong}
               nameArtist={profile.nameArtist}
-              nameAlbum={profile.nameAlbum}
               imageAlbum={profile.imageAlbum}
+              nameAlbum={profile.nameAlbum}
               duration={profile.duration}
               gener={profile.gener}
-              info={profile.info} lyrics={profile.lyrics} />
-          );
+              lyrics={profile.lyrics}
+              info={profile.info} />
+          );}
         })}
       </ul>
       </main>
       </>
     );
   }
-  export default Listen_again
+  export default Similar_To

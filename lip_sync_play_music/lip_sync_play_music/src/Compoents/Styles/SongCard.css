@@ -1,0 +1,50 @@
+.profiles {
+    height: 70%;
+    width: 100%;
+    display:block;
+    justify-content: center;
+    align-items: center;
+    background:rgba(255, 255, 0, 0.387);
+  }
+  
+  .profiles ul {
+    display: columns;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(
+        400px,
+        1fr
+      )
+    );
+    gap: 1rem;
+  }
+  
+  .profiles li {
+    display:inline-block;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    background: #111;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  .profiles h3 {
+    margin: 0;
+  }
+  
+  .profiles span {
+    font-size: 1rem;
+    opacity: .9;
+  }
+  
+  .profiles img {
+    border-radius: 12px;
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 16/9;
+    display:center;
+    object-fit: cover;
+    background: #fff;
+  }
