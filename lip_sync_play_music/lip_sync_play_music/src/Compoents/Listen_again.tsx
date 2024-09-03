@@ -1,6 +1,6 @@
 import { PROFILES } from "../Registers/PROFILES";
 import SongCard from "./SongCard";
-import "./Styles/SongCard.css"
+
 
 function Listen_again() {
     return (
