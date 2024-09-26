@@ -14,12 +14,18 @@ function Listen_again() {
               key={profile.nameSong}
               imageArtist={profile.imageArtist}
               nameSong={profile.nameSong}
-              nameArtist={profile.nameArtist}
               nameAlbum={profile.nameAlbum}
               imageAlbum={profile.imageAlbum}
+              nameArtist={profile.nameArtist}
+              year={profile.year}
+              durationTot={profile.durationTot} 
+              cantSong={profile.cantSong}
+              nroTrack={profile.nroTrack}
               duration={profile.duration}
               gener={profile.gener}
-              info={profile.info} lyrics={profile.lyrics} />
+              info={profile.info} 
+              lyrics={profile.lyrics} 
+            />
           );
         })}
       </ul>

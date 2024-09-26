@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router";
 import App from "../App";
-import NewPlayList from "./FuncComp/NewPlayList";
+//import NewPlayList from "./FuncComp/NewPlayList";
+import ComponentsList from "./All_nav/ComponentsList";
 
 function MyRoutes (){
     return(
@@ -11,7 +12,7 @@ function MyRoutes (){
         <Route path='/inicio'/>
         <Route path='/Home' element={<App/>}/>
         {/*<Route path='/Categorias' element={<Categorias categs={categs}/>}/>*/}
-        <Route path='/New Play List' element={<NewPlayList/>}/>
+        <Route path='/ComponentsList' element={<ComponentsList/>}/>
        {/* <Route path='/Logueate' element={<Login logs={logs}/>}/>*/}
         
     </Routes>

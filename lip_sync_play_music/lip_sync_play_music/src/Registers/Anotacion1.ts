@@ -212,3 +212,54 @@ const linksArray = [
     margin: ${v.lgSpacing} 0;
   `;
   //#endregion
+
+  <Route >
+      {/*<button className="Sidebarbutton" onClick={ModSidebaropen}>
+        <AiOutlineLeft />
+      </button>*/}
+      <div className="Logocontent">
+        <div className="imgcontent">
+          <img src={logo} />
+        </div>
+        <h2>codigo369</h2>
+      </div>
+      {linksArray.map(({ label }) => (
+        <div className="LinkContainer" key={label}>
+          <NavLink>
+            {/*<div className="Linkicon">{icon}</div>*/}
+            sidebarOpen && <span>{label}</span>
+          </NavLink>
+        </div>
+      ))}
+      <aside />
+      {secondarylinksArray.map(({  label }) => (
+        <div className="LinkContainer" key={label}>
+          <NavLink>
+           {/* <div className="Linkicon">{icon}</div>*/}
+            sidebarOpen && <span>{label}</span>
+          </NavLink>
+        </div>
+      ))}
+      <aside />
+      <div >
+        sidebarOpen && <span className="titletheme">Dark mode</span>
+        <div className="Togglecontent">
+          <div className="grid theme-container">
+            <div className="content">
+              <div className="demo">
+                <label className="switch" >
+                  <input
+                    
+                    type="checkbox"
+                    className="theme-swither"
+                    
+                  ></input>
+                  <span  className="slider round"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Route>
+  

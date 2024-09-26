@@ -2,18 +2,22 @@ import {useState } from "react";
 import { Props } from "../Registers/PROFILES";
 import "./Styles/SongCard.css"
 
+const AUDIO_URL = 'https://api.audioboom.com/audio_clips';
+
   function SongCard(props: Props) {
     const [count, setCount] = useState(0)
     const [like, setLike]= useState(false)
     const [boton,setBoton]=useState('')
-    const { imageArtist, nameSong, nameArtist, nameAlbum, duration } = props;
+    const { imageArtist, nameSong, nroTrack, nameArtist, nameAlbum, year, duration } = props;
     return (
       <>
       <li>
        <div> <img src={imageArtist} /> </div>
         <h2>{nameSong}</h2>
+        <p>Numero de Pista: {nroTrack}</p>
         <p>Artista: {nameArtist}</p>
         <p>Album: {nameAlbum}</p>
+        <p>Año: {year}</p>
         <p>Duración: {duration} min</p>
         <div>
         

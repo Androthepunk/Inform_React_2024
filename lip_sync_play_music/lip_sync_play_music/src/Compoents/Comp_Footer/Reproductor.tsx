@@ -1,9 +1,8 @@
-import './Styles/Footer.css';
 import { useRef, useState } from 'react';
 
 const AUDIO_URL = 'https://api.audioboom.com/audio_clips';
 
-function PlaybackBar() {
+export default function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -28,6 +27,4 @@ function PlaybackBar() {
       <audio ref={audioRef} src={AUDIO_URL} />
     </>
   );
-};
-
-export default PlaybackBar
+}
