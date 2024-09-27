@@ -2,7 +2,7 @@ import {useState } from "react";
 import { Props } from "../Registers/PROFILES";
 import "./Styles/SongCard.css"
 
-const AUDIO_URL = 'https://api.audioboom.com/audio_clips';
+//const AUDIO_URL = 'https://api.audioboom.com/audio_clips'; QUICE EMPATAR LA API CON PROPS, NO ME FUNCIONÓ
 
   function SongCard(props: Props) {
     const [count, setCount] = useState(0)
