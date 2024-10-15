@@ -2,7 +2,7 @@ function  Search() {
     return(
         <>
         <h3>Buscador de Podscast</h3>
-        <form className='form' >
+        <form className='form_nl' >
         <input
             style={{
             border: '1px solid transparent',

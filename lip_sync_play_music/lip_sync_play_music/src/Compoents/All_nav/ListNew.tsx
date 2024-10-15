@@ -1,5 +1,6 @@
 //import { useState } from "react";
 import { Props } from "../../Registers/PROFILES";
+import "../Styles/ListNew.css"
 
 type Listprop={
     listValue: Array<Props>
@@ -9,7 +10,7 @@ function ListNew({listValue}:Listprop) {
     
 return (
     <>
-        <ul className='profiles'>
+        <ul >
             {listValue.map((inputValue)=>{
                 return (
                     <>

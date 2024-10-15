@@ -50,45 +50,20 @@
 }
 .App {
   display:block;
-  place-content:initial;
-  align-content: flex-start;
+  place-content:calc(100% - 80px);
+  align-content:space-around;
   align-items:center;
   background-color: rgba(127, 223, 255, 0.518);
   min-width: 1280px;
-  margin: 2;
+  margin-left: auto;
+  margin: 2rem;
   padding: 2rem;
   text-align: center;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: center;
+  scrollbar-width:none;
 }
 
-/* para acomodar todo el conjunro de la barra de navegacion*/
-
-.nav-bar, ul {
-  list-style-type: none;
-  display:flex;
-  flex-direction:initial;
-  place-content:inherit;
-  align-content: flex-start;
-  position:relative;
-  align-items: stretch;
-  text-align:center;
-  padding: 4px 6px;
-  margin: 0 0 4px;
-}
-
-/*Para el diseño y decorado de los enlaces*/
-#nav-bar, li {
-  padding: 2px 7px 2px 7px;
-  color: #666;
-  background-color: #eeeeee;
-  border: 1px solid #ccc;
-  text-decoration: none;
-}
-
-#nav-bar li link:hover{
-  background-color: #333333;
-  color: #ffffff;
-}
-*/
 /*para ajustar la ubicacion de los elementos*/
 
 li, link{
@@ -140,4 +115,18 @@ li, link{
   align-items:center;
   padding: 4px 6px;
   margin: 0 0 4px
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.img {
+  border-radius: 12px;
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 16/9;
+  display:center;
+  object-fit: cover;
+  background: #fff;
 }

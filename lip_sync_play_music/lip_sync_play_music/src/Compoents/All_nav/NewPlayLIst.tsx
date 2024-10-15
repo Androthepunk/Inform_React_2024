@@ -1,7 +1,7 @@
 import '/src/main.css'
 import '../Styles/Form_app.css'
 import { Props } from '../../Registers/PROFILES'
-import { ChangeEvent, FormEvent, useReducer} from 'react'
+import { ChangeEvent, FormEvent, useReducer, useState} from 'react'
 
 
 const INITIAL_STATE = {
@@ -60,15 +60,17 @@ const useNewUsuarioForm = () => {
 function NewPlayList ({listValue, setList}:FormProp) {
     //const {  nameSong, imageAlbum,gener,durationTot,cantSong,nroTrack, imageArtist,nameArtist, nameAlbum, year, duration } = props;
     const [inputValue, setInputValue ] = useNewUsuarioForm() ;
-    
+    const [submitF, setSubmitF]= useState(false)
     const handleSubmit = (event:FormEvent<HTMLFormElement >)=> {
         event.preventDefault();     //para evitar el comportamiento 
         const newList= [...listValue]
-        
         newList.push(inputValue);
         setList(newList)
         handleClear()
         setInputValue({type:'clear'});
+        if (submitF===true) { 
+         (handleClear())}
+        setSubmitF(false)
         
     }                               //por defecto del navegador
 
@@ -121,10 +123,10 @@ function NewPlayList ({listValue, setList}:FormProp) {
                 <label >Foto Artista: </label>
                 <input onChange={handleChange} value={inputValue.imageArtist} type="img" name='imageArtist'/>
                 </>
-                <button type="submit">Agregar</button>
-                <button type="submit">Cancelar</button>
+                <button type="submit" name='agregar'>Agregar</button>
+                
             </form>
-            
+            <button  name='cancelar' onClick={handleClear}>Cancelar</button>
         </div>
     
     )

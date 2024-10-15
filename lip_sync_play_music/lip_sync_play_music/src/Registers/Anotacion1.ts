@@ -88,7 +88,7 @@ const linksArray = [
         transform: ${({ isOpen }) => (isOpen ? `scale(0.7)` : `scale(1.5)`)};
       }
       h2 {
-        display: ${({ isOpen }) => (isOpen ? `block` : `none`)};
+        display: ${({ isOpen }) => (isOpen ? `block` : `none`)}
       }
     }
     .LinkContainer {

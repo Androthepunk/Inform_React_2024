@@ -1,34 +1,33 @@
-//import { createContext,  } from "react";
-//import { BrowserRouter, Route } from "react-router-dom";
-//import MyRoutes from "./Compoents/MyRoutes";
-//import SideBar from "./Compoents/SideBar";
-//import {Light, Dark} from "./Compoents/Styles/Themes.jsx";
-
+import SideBar from "./Compoents/SideBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
-import ComponentsList from "./Compoents/All_nav/ComponentsList";
-import SideBar from "./Compoents/SideBar";
 import { Home } from "./Home";
-//export const ThemeContext=createContext(null)
+import NavBar from "./Compoents/Component_NavBr/NavBar";
+import NewPlayList from "./Compoents/All_nav/NewPlayLIst";
+import { useState } from "react";
+import { Props } from "./Registers/PROFILES";
+import Login from "./Compoents/Component_NavBr/Login";
+
+
 
 function Principal(){
-    {/*const [theme, setTheme]=useState("light");
-    const themeStyle=theme==='ligth'? Light : Dark;
-    const [sidebarOpen, setSidebarOpen] = useState(true);*/}
-    return(
+  const [listValue, setList] = useState<Array<Props>>([])
+     return(
+      
+       <BrowserRouter>
             
-            <BrowserRouter>
-                <SideBar />
-                <Routes>                
-                    <Route path="/Home" element={<Home/>}/>
-                    <Route path="/App" element={<App/>}/>
-                    <Route path="/ComponentsList" element={<ComponentsList/>} />
-                </Routes>
-             </BrowserRouter> 
-              
-             
-       
-        )
+           <NavBar/>
+           <SideBar listValue={listValue}/> 
+           <Routes> 
+              <Route path="/" element={<Home/>}/>
+                 <Route path="/App" element={<App/>}/>
+                 <Route path="/NewPlayList" element={<NewPlayList listValue={listValue} setList={setList}/>} />
+              </Routes>
+               
+          
+      </BrowserRouter>  
+     
+    )
     };
    
     
