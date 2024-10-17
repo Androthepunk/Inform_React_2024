@@ -1,35 +1,33 @@
-import { useState } from "react";
 import './Styles/Footer.css';
+import { useRef, useState } from 'react';
+
+const AUDIO_URL = 'https://api.audioboom.com/audio_clips';
 
 function PlaybackBar() {
-    const [count, setCount] = useState(0)
-    const [estado, setEstado] = useState('paused')
-        return(
-        <>  
-        
-        <h4> Aqui se mostrará la canción en curso reproducida </h4>
-        <section>
-         <p>Ahora en: {estado}  {count}</p>
-        <button  onClick={() => {if (count > 1) setCount((count) => count - 1)}}>
-          Previus ⏪
-        </button>
-        <button onClick={() => {if(count>0){if (estado==='playing') 
-                                  {setEstado(()=>'paused')}
-                                     else if (estado==='paused'|| estado ==='stopped') 
-                                                {setEstado(()=>'playing')}
-                                       }else if(count===0){window.alert('No Hay Canciones en lista');
-                                        window.alert('Presione por el momento next para seguir probando')}}}>
-        ▶️/⏸️  
-        </button>
-        <button onClick={() => {if (estado==='playing'||estado==='paused') {setEstado(()=>'stopped')}}}>
-        ⏹️  
-        </button>
-        <button onClick={() => setCount((count) => count + 1)}>
-         ⏩ Nex
-        </button>
-        </section>
-        </>
-        )
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  function handleClick() {
+    setIsPlaying(!isPlaying);
+    if (isPlaying) {
+      audioRef.current?.pause();
+    } else {
+      audioRef.current?.play();
+    }
+  }
+  function handleReset() {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+    }
+  }
+
+  return (
+    <>
+      <button onClick={handleReset}>resetear</button>
+      <button onClick={handleClick}>{isPlaying ? '⏸️' : '▶️'}</button>
+      <audio ref={audioRef} src={AUDIO_URL} />
+    </>
+  );
 };
 
 export default PlaybackBar
