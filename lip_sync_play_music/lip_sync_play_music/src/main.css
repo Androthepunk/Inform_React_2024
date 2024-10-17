@@ -24,8 +24,8 @@
   }
   
   body {
-    margin: 2;
-    display:inline-flex;
+    margin: 5rem;
+    display:flexbox;
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
@@ -39,7 +39,7 @@
   .form {
     display:contents;
     place-content: center;
-    flex-direction:column;
+    flex-direction:row;
     position:relative;
     max-width: 150px;
     max-height: 500vh;

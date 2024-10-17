@@ -3,7 +3,11 @@
     width: 100%;
     display:block;
     justify-content: center;
+    place-content: center;
+    align-content:center;
     align-items: center;
+    flex-direction:row;
+    position:unset;
     background:rgba(255, 255, 0, 0.387);
   }
   

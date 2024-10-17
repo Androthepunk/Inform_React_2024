@@ -1,6 +1,6 @@
 //import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './main.css'
+import './index.css'
 import { Header } from './Compoents/Header.tsx'
 import { Footer } from './Compoents/Footer.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -16,11 +16,11 @@ createRoot(document.getElementById('root')!).render(
     <Header/>
     <SideBar />
          <Routes>                
-             <Route path="/Home" element={<Home/>}/>
+             <Route path="/" element={<Home/>}/>
               <Route path="/App" element={<App/>}/>
                <Route path="/ComponentsList" element={<ComponentsList/>} />
           </Routes>
-      <Footer />
+       <Footer />
     
   </BrowserRouter>
 )
