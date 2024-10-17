@@ -1,4 +1,4 @@
-export type User = { name: string; registrationStatus: string };
+type User = { email: string; registrationStatus: string };
 type BannerProps = {
   type: 'success' | 'error';
   children: React.ReactNode;
@@ -21,17 +21,3 @@ export function AuthRequired({ user, children }: AuthRequiredProps) {
   return children;
 }
 
-const USER: User = {
-  name: 'Andro',
-  registrationStatus: 'verified',
-};
-export default function Login() {
-  return (
-    <>
-      <h1>lip Sync Play Music</h1>
-      <AuthRequired user={USER}>
-        <Banner type="success">Login Exitoso! Bienvenido, {USER.name}!</Banner>
-      </AuthRequired>
-    </>
-  );
-}

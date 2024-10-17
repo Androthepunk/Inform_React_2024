@@ -6,26 +6,41 @@ import NavBar from "./Compoents/Component_NavBr/NavBar";
 import NewPlayList from "./Compoents/All_nav/NewPlayLIst";
 import { useState } from "react";
 import { Props } from "./Registers/PROFILES";
-import Login from "./Compoents/Component_NavBr/Login";
+import Login, { AuthRequired } from "./Compoents/Component_NavBr/BannerLogin";
+import LoginForm from "./Compoents/Component_NavBr/LoginForm";
+
 
 
 
 function Principal(){
   const [listValue, setList] = useState<Array<Props>>([])
-     return(
-      
+  const [email, setEmail] = useState('');
+  const [visibleF, setVisibleF] = useState(true);
+    const USER: User = {
+        name: 'androthepunk@gmail.com',
+        registrationStatus: 'verified',
+      };
+     return(<>
+     
+      <LoginForm email={email} setEmail={setEmail}/>
+      {(email===USER.name) ?(
+        <AuthRequired user={USER}>
        <BrowserRouter>
-            
-           <NavBar/>
-           <SideBar listValue={listValue}/> 
-           <Routes> 
-              <Route path="/" element={<Home/>}/>
-                 <Route path="/App" element={<App/>}/>
-                 <Route path="/NewPlayList" element={<NewPlayList listValue={listValue} setList={setList}/>} />
-              </Routes>
+            <NavBar/>
+           
+            <SideBar listValue={listValue}/> 
+            <Routes> 
+                  <Route path="/" element={<Home/>}/>
+                  <Route path="/App" element={<App/>}/>
+                  <Route path="/NewPlayList" element={<NewPlayList listValue={listValue} setList={setList}/>} />
                
-          
-      </BrowserRouter>  
+               </Routes>
+               </BrowserRouter>
+               </AuthRequired>):( <div className="App"><h3>Ingrese a Nuestra App</h3></div>)}
+               
+
+               </>
+        
      
     )
     };
