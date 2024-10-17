@@ -1,52 +1,36 @@
 import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
 import './App.css'
+import Listen_again from './Compoents/Listen_again'
+import QuickPicks from './Compoents/QuickPicks'
+import RecommendedAlbums from './Compoents/RecommendedAlbums'
+import Similar_To from './Compoents/Similar_To'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        {/*<a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>*/}
-      </div>
       <h2>Sonidos + Confort</h2>
-      <div className="card">
-        <Listen_again/>
-        <button onClick={() => setCount((count) => count + 1)}>
-          Add this {count}
-        </button>
-        <ArtistCard/>
-        <button onClick={() => setCount((count) => count + 1)}>
-          Add this {count}
-        </button>
-        <AlbumCard/>
-        <button onClick={() => setCount((count) => count + 1)}>
-          Add this {count}
-        </button>
-        <PlaybackBar/>
-        <button onClick={() => setCount((count) => count + 1)}>
-          Previus
-        </button>
-        <button onClick={() => setCount((count) => count + 1)}>
-          Play/Pause
-        </button>
-        <button onClick={() => setCount((count) => count + 1)}>
-          Nex
-        </button>
-        {/*<p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>*/}
+      <div className='App' >        
+        <div className="card">
+          <Listen_again/>
+          <QuickPicks/>
+          <button onClick={() => setCount((count) => count + 1)}>
+            Add this to playlist {count}
+          </button>
+          <RecommendedAlbums/>
+          <button onClick={() => setCount((count) => count + 1)}>
+            Add this to favorites {count}
+          </button>
+        <Similar_To/>
+          <button onClick={() => setCount((count) => count + 1)}>
+            Add to playlist {count}
+          </button>
+        
+          
+        </div>
+       
       </div>
-      {/*<p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>*/}
     </>
   )
 }

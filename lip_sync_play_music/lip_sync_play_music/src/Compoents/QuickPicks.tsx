@@ -1,25 +1,26 @@
 import { PROFILES } from "../Registers/PROFILES";
 import SongCard from "./SongCard";
-import "./Styles/SongCard.css"
+import "./Styles/QuickCard.css";
 
-function Listen_again() {
+function QuickPicks() {
     return (
       <>
-      <h2>Listen again</h2>
-      <main className='profiles'>
-        <ul>
-         {PROFILES.map((profile) => {
+        <h2>Quick Picks</h2>
+      <main className="suggested">
+      <ul>        
+        {PROFILES.map((profile) => {
           return (
             <SongCard
               key={profile.nameSong}
-              imageArtist={profile.imageArtist}
+              imageArtist={"profile.imageAlbum"}
               nameSong={profile.nameSong}
               nameArtist={profile.nameArtist}
               nameAlbum={profile.nameAlbum}
-              imageAlbum={profile.imageAlbum}
+              imageAlbum={"profile.imageAlbum"}
               duration={profile.duration}
               gener={profile.gener}
-              info={profile.info} lyrics={profile.lyrics} />
+              info={profile.info}
+              lyrics={profile.lyrics} />
           );
         })}
       </ul>
@@ -27,4 +28,4 @@ function Listen_again() {
       </>
     );
   }
-  export default Listen_again
+  export default QuickPicks
