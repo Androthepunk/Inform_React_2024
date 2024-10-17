@@ -16,21 +16,18 @@ function Principal(){
     const themeStyle=theme==='ligth'? Light : Dark;
     const [sidebarOpen, setSidebarOpen] = useState(true);*/}
     return(
-        <>     
+            
             <BrowserRouter>
                 <SideBar />
                 <Routes>                
                     <Route path="/Home" element={<Home/>}/>
                     <Route path="/App" element={<App/>}/>
                     <Route path="/ComponentsList" element={<ComponentsList/>} />
-                        {/*
-                        <MyRoutes/>*/}
-                    
                 </Routes>
              </BrowserRouter> 
               
              
-        </>
+       
         )
     };
    

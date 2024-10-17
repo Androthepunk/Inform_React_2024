@@ -1,12 +1,11 @@
 import '/src/main.css'
-import '../Styles/SongCard.css'
+import '../Styles/Form_app.css'
 import { Props } from '../../Registers/PROFILES'
 import { ChangeEvent, FormEvent, useReducer} from 'react'
 
 
 const INITIAL_STATE = {
-    // id_user:'',
-    imageArtist: '',
+  imageArtist: '',
   nameAlbum: '',
   imageAlbum: '',
   nameArtist: '',
@@ -94,8 +93,9 @@ function NewPlayList ({listValue, setList}:FormProp) {
 
     return (
         
-        <div className='form'>
+        <div className='form_nl'>
             <form onSubmit={handleSubmit} >
+                <>
                 <label >Nombre Album</label>
                 <input  type="text" value={inputValue.nameAlbum} onChange={handleChange} name='nameAlbum'/>
                 <label >Artista</label>
@@ -120,10 +120,11 @@ function NewPlayList ({listValue, setList}:FormProp) {
                 <input onChange={handleChange} value={inputValue.gener} type="text" name='gener'/>
                 <label >Foto Artista: </label>
                 <input onChange={handleChange} value={inputValue.imageArtist} type="img" name='imageArtist'/>
+                </>
                 <button type="submit">Agregar</button>
                 <button type="submit">Cancelar</button>
             </form>
-
+            
         </div>
     
     )
