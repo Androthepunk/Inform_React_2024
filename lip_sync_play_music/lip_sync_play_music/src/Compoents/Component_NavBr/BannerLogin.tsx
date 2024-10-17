@@ -1,4 +1,4 @@
-type User = { email: string; registrationStatus: string };
+export type User = { email: string; registrationStatus: string };
 type BannerProps = {
   type: 'success' | 'error';
   children: React.ReactNode;

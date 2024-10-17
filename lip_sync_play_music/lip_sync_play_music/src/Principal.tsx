@@ -6,7 +6,7 @@ import NavBar from "./Compoents/Component_NavBr/NavBar";
 import NewPlayList from "./Compoents/All_nav/NewPlayLIst";
 import { useState } from "react";
 import { Props } from "./Registers/PROFILES";
-import Login, { AuthRequired } from "./Compoents/Component_NavBr/BannerLogin";
+import { AuthRequired, User } from "./Compoents/Component_NavBr/BannerLogin";
 import LoginForm from "./Compoents/Component_NavBr/LoginForm";
 
 
@@ -15,15 +15,15 @@ import LoginForm from "./Compoents/Component_NavBr/LoginForm";
 function Principal(){
   const [listValue, setList] = useState<Array<Props>>([])
   const [email, setEmail] = useState('');
-  const [visibleF, setVisibleF] = useState(true);
+  //const [visibleF, setVisibleF] = useState(true);
     const USER: User = {
-        name: 'androthepunk@gmail.com',
+        email: 'androthepunk@gmail.com',
         registrationStatus: 'verified',
       };
      return(<>
      
       <LoginForm email={email} setEmail={setEmail}/>
-      {(email===USER.name) ?(
+      {(email===USER.email) ?(
         <AuthRequired user={USER}>
        <BrowserRouter>
             <NavBar/>

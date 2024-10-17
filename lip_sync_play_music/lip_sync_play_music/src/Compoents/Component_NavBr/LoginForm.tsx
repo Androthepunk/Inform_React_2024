@@ -1,4 +1,4 @@
-import { ComponentProps, Dispatch, useState } from 'react';
+import { ComponentProps, Dispatch } from 'react';
 
 type TextInputProps = ComponentProps<'input'> & {
   label: string;
