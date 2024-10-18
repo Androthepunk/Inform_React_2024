@@ -1,5 +1,5 @@
 
-import { Banner, User } from "./Compoents/Component_NavBr/BannerLogin";
+import { Banner, User } from "./Compoents/component_NavBr/BannerLogin";
 
 import "./Images/Artists/los_palmeras.jpg"
 

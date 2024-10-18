@@ -1,6 +1,6 @@
 import '/src/main.css'
 import '../Styles/Form_app.css'
-import { Props } from '../../Registers/PROFILES'
+import { Props } from '../../registers/PROFILES'
 import { ChangeEvent, FormEvent, useReducer, useState} from 'react'
 
 

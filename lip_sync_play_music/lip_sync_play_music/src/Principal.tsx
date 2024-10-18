@@ -2,12 +2,12 @@ import SideBar from "./Compoents/SideBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import { Home } from "./Home";
-import NavBar from "./Compoents/Component_NavBr/NavBar";
-import NewPlayList from "./Compoents/All_nav/NewPlayLIst";
+import NavBar from "./Compoents/component_NavBr/NavBar";
+import NewPlayList from "./Compoents/all_nav/NewPlayLIst";
 import { useState } from "react";
-import { Props } from "./Registers/PROFILES";
-import { AuthRequired, User } from "./Compoents/Component_NavBr/BannerLogin";
-import LoginForm from "./Compoents/Component_NavBr/LoginForm";
+import { Props } from "./registers/PROFILES";
+import { AuthRequired, User } from "./Compoents/component_NavBr/BannerLogin";
+import LoginForm from "./Compoents/component_NavBr/LoginForm";
 
 
 

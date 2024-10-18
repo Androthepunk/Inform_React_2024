@@ -1,6 +1,6 @@
-import useFetchData from "../Hooks/useFetchData";
+import useFetchData from "../hooks/useFetchData";
 //import { PROFILES } from "../Registers/PROFILES";
-import Props_audio_urls from "../Registers/Props_audio_url";
+import Props_audio_urls from "../registers/Props_audio_url";
 //import SongCard from "./SongCard";
 import "./Styles/QuickCard.css";
 const AUDIO_URL = 'https://api.audioboom.com/audio_clips';

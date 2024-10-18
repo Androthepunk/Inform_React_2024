@@ -1,5 +1,5 @@
-import useFetchData from "../Hooks/useFetchData";
-import Props_audio_urls from "../Registers/Props_audio_url";
+import useFetchData from "../hooks/useFetchData";
+import Props_audio_urls from "../registers/Props_audio_url";
 //import { PROFILES } from "../Registers/PROFILES";
 //import AlbumCard from "./AlbumCard";
 import "./Styles/AlbumCard.css"

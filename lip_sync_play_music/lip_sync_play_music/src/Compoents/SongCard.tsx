@@ -1,5 +1,5 @@
 import {useState } from "react";
-import { Props } from "../Registers/PROFILES";
+import { Props } from "../registers/PROFILES";
 import "./Styles/SongCard.css"
 
 

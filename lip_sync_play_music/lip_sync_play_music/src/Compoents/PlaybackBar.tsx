@@ -1,4 +1,4 @@
-import useFetchData from '../Hooks/useFetchData';
+import useFetchData from '../hooks/useFetchData';
 import './Styles/Footer.css';
 import { useRef, useState } from 'react';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState} from "react";
-import Props_audio_urls from "../Registers/Props_audio_url";
-import useFetchData from "../Hooks/useFetchData";
+import Props_audio_urls from "../registers/Props_audio_url";
+import useFetchData from "../hooks/useFetchData";
 const AUDIO_URL = 'https://api.audioboom.com/audio_clips';
 
 function Listen_again() {

@@ -2,11 +2,11 @@
 
 import "./Styles/Sidebar.css";
 //import ListNew from "./All_nav/ListNew";
-import { Props } from "../Registers/PROFILES";
+import { Props } from "../registers/PROFILES";
 import { useState } from "react";
 //import Desplegar from "./All_nav/Desplegar";
 import { NavLink } from "react-router-dom";
-import ListNew from "./All_nav/ListNew";
+import ListNew from "./all_nav/ListNew";
 {/*import { Home } from "../Home";*/}
 
 type PropList={

@@ -1,5 +1,5 @@
 import {useState } from "react";
-import { Props } from "../../Registers/PROFILES";
+import { Props } from "../../registers/PROFILES";
 import ListNew from "./ListNew";
 import NewPlayList from "./NewPlayLIst";
 
