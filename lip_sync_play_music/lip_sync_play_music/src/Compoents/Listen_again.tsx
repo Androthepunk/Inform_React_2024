@@ -1,63 +1,47 @@
-import { PROFILES } from "../Registers/PROFILES";
-import SongCard from "./SongCard";
-//const AUDIO_URL = 'https://api.audioboom.com/audio_clips';
-
-{/*const [audio_clips, setProfiles] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(AUDIO_URL)
-      .then((res) => res.json())            ------> No pude fechear, y mapear los datos, me daban errores de tipo
-      .then((data) => {
-        setProfiles(data.results);
-      })
-      .catch(() => {
-        setError('Hubo un error');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
-
-  if (isLoading) {
-    return <p>Cargando ando....</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  } */}
+import { useEffect, useState} from "react";
+import Props_audio_urls from "../Registers/Props_audio_url";
+import useFetchData from "../Hooks/useFetchData";
+const AUDIO_URL = 'https://api.audioboom.com/audio_clips';
 
 function Listen_again() {
-    return (
+  const {data:audio_clips,isLoading, error} = useFetchData(AUDIO_URL);
+
+ 
+if (isLoading) {
+    return <p>Cargando ando....</p>;
+}
+
+if (error) {
+    return <p>{error}</p>;
+}
+
+  return (
       <>
       <h2>Listen again</h2>
       <main className='profiles'>
-        <ul>
-         {PROFILES.map((profile) => {
+      <button className="button--previous" type="button"> ◀ </button>
+      <ul>
+         {audio_clips.map((audio_clip) => {
           return (
-            <SongCard
-              key={profile.nameSong}
-              imageArtist={profile.imageArtist}
-              nameSong={profile.nameSong}
-              nameAlbum={profile.nameAlbum}
-              imageAlbum={profile.imageAlbum}
-              nameArtist={profile.nameArtist}
-              year={profile.year}
-              durationTot={profile.durationTot} 
-              cantSong={profile.cantSong}
-              nroTrack={profile.nroTrack}
-              duration={profile.duration}
-              gener={profile.gener}
-              info={profile.info} 
-              lyrics={profile.lyrics} 
-            />
-          );
-        })}
-      </ul>
+            <>
+          
+          <Props_audio_urls 
+              image={audio_clip.channel.urls.logo_image.original}
+              title={audio_clip.title}
+              recorded_at={audio_clip.recorded_at}
+              duration={audio_clip.duration}
+              high_mp3={audio_clip.urls.high_mp3}
+           />
+          
+          </>
+        );
+      })}
+        </ul>
+        <button className="button--next" type="button"> ▶ </button>  
       </main>
       </>
     );
   }
   export default Listen_again
+
+

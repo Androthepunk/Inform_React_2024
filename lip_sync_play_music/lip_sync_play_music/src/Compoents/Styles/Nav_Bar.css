@@ -1,0 +1,28 @@
+/* para acomodar todo el conjunro de la barra de navegacion*/
+
+.nav-bar {
+    list-style-type: none;
+    display:flex;
+    flex-direction:initial;
+    place-content:inherit;
+    align-content: flex-start;
+    position:absolute;
+    align-items: stretch;
+    text-align:center;
+    padding: 4px 6px;
+    margin: 0 0 4px;
+  }
+
+  /*Para el diseño y decorado de los enlaces*/
+#nav-bar, li {
+  padding: 2px 7px 2px 7px;
+  color: #666;
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  text-decoration: none;
+}
+
+#nav-bar li link:hover{
+    background-color: #333333;
+    color: #ffffff;
+  }

@@ -1,34 +1,48 @@
-//import { createContext,  } from "react";
-//import { BrowserRouter, Route } from "react-router-dom";
-//import MyRoutes from "./Compoents/MyRoutes";
-//import SideBar from "./Compoents/SideBar";
-//import {Light, Dark} from "./Compoents/Styles/Themes.jsx";
-
+import SideBar from "./Compoents/SideBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
-import ComponentsList from "./Compoents/All_nav/ComponentsList";
-import SideBar from "./Compoents/SideBar";
 import { Home } from "./Home";
-//export const ThemeContext=createContext(null)
+import NavBar from "./Compoents/Component_NavBr/NavBar";
+import NewPlayList from "./Compoents/All_nav/NewPlayLIst";
+import { useState } from "react";
+import { Props } from "./Registers/PROFILES";
+import { AuthRequired, User } from "./Compoents/Component_NavBr/BannerLogin";
+import LoginForm from "./Compoents/Component_NavBr/LoginForm";
+
+
+
 
 function Principal(){
-    {/*const [theme, setTheme]=useState("light");
-    const themeStyle=theme==='ligth'? Light : Dark;
-    const [sidebarOpen, setSidebarOpen] = useState(true);*/}
-    return(
-            
-            <BrowserRouter>
-                <SideBar />
-                <Routes>                
-                    <Route path="/Home" element={<Home/>}/>
-                    <Route path="/App" element={<App/>}/>
-                    <Route path="/ComponentsList" element={<ComponentsList/>} />
-                </Routes>
-             </BrowserRouter> 
-              
-             
-       
-        )
+  const [listValue, setList] = useState<Array<Props>>([])
+  const [email, setEmail] = useState('');
+  //const [visibleF, setVisibleF] = useState(true);
+    const USER: User = {
+        email: 'androthepunk@gmail.com',
+        registrationStatus: 'verified',
+      };
+     return(<>
+     
+      <LoginForm email={email} setEmail={setEmail}/>
+      {(email===USER.email) ?(
+        <AuthRequired user={USER}>
+       <BrowserRouter>
+            <NavBar/>
+           
+            <SideBar listValue={listValue}/> 
+            <Routes> 
+                  <Route path="/" element={<Home/>}/>
+                  <Route path="/App" element={<App/>}/>
+                  <Route path="/NewPlayList" element={<NewPlayList listValue={listValue} setList={setList}/>} />
+               
+               </Routes>
+               </BrowserRouter>
+               </AuthRequired>):( <div className="App"><h3>Ingrese a Nuestra App</h3></div>)}
+               
+
+               </>
+        
+     
+    )
     };
    
     

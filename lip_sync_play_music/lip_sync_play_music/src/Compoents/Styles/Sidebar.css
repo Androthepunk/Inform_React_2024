@@ -1,8 +1,33 @@
 .sidebar {
     position: fixed;
+    display:flex;
+    flex-direction:column;
+    /*place-content:initial;*/
+    align-content:start;
+    align-items:center;
+    background-color: rgba(127, 217, 255, 0.367);
     top: 50%;
-    right: 0;
+    left:0%;
     transform: translateY(-50%);
+    width: 20rem;
+    height: calc(100vh - 52px);
+    border-right: 1px solid rgb(1, 91, 76);
+    ul{
+      list-style: none;
+      
+      padding: 3rem 4rem;
+      li {
+        display:list-item;
+        margin-bottom: 1rem;
+      }
+      a {
+        text-decoration: none;
+        &active{
+          background-color: aqua;
+        }
+      }
+    
+    }
   }
   
   .sidebar_icon {
@@ -53,4 +78,10 @@
   
   .sidebar_item p {
     font-size: 1rem;
+    color: blue;
+    background-color: aquamarine;
   }
+
+  /*Viendo si responde desde acá el listado*/
+
+  

@@ -2,7 +2,7 @@ import {useState } from "react";
 import { Props } from "../Registers/PROFILES";
 import "./Styles/SongCard.css"
 
-//const AUDIO_URL = 'https://api.audioboom.com/audio_clips'; QUICE EMPATAR LA API CON PROPS, NO ME FUNCIONÓ
+
 
   function SongCard(props: Props) {
     const [count, setCount] = useState(0)
@@ -21,7 +21,12 @@ import "./Styles/SongCard.css"
         <p>Duración: {duration} min</p>
         <div>
         
-        <button className='button' onClick={() => {if (like===false) {setLike(()=>true); setCount(()=>count+1 ); setBoton(()=>'👍' ) } else if (like===true) {setLike(()=>false);setBoton(()=>'' )};if(count>0) setCount((count) => count-1);}}>
+        <button className='button' onClick={() => {
+          if (like===false) {
+            setLike(()=>true); setCount(()=>count+1 ); setBoton(()=>'👍' ) }
+             else if (like===true) {
+                    setLike(()=>false);setBoton(()=>'' )};
+          if(count>0) setCount((count) => count-1);}}>
         Add to like: {count} {boton}
           
         </button>
